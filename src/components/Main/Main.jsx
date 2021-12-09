@@ -1,11 +1,29 @@
 import React from 'react';
-import { Card, CardHeader, CardContent, Typography, Grid } from "@material-ui/core";
+import { Card, CardHeader, CardContent, Typography, Grid, Divider } from "@material-ui/core";
+import useStyles from './styles';
 
 const Main = props => {
+    const classes = useStyles();
     return (
-        <div>
-
-        </div>
+        <Card className={classes.root}>
+            <CardHeader title={"Expense Tracker"}subheader={"Powered by Speechly"} />
+            <CardContent>
+                <Typography align="center" variant="h5">Total Blaance $100</Typography>
+                <Typography variant="subtitle1" style={{ lineHeight: '1.5em', marginTop: '20px'}}>
+                    {/* InfOCard */}
+                    Try saying add income for $100 inc ategory
+                </Typography>
+                <Divider />
+                {/* FORM */}
+            </CardContent>
+            <CardContent className={classes.cardContent}>
+                <Grid container spacing={2}>
+                    <Grid item xs={12}>
+                        {/* LIST */}
+                    </Grid>
+                </Grid>
+            </CardContent>
+        </Card>
     );
 };
 
