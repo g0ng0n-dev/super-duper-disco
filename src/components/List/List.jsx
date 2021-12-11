@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import React from 'react';
 import { List as MUIList, ListItem, ListItemAvatar, ListItemText, ListItemSecondaryAction, Avatar, IconButton, Slide } from '@material-ui/core';
 import { Delete, MoneyOff } from '@material-ui/icons';
 import useStyles from './styles';
@@ -12,8 +12,20 @@ const List =()=> {
             type: "Income",
             category: "Salary",
             amount: 33,
-            date: new Date()
-        }
+            date: 'Wed Dec 16'
+        },{
+            id:2,
+            type: "Expense",
+            category: "Pets",
+            amount: 50,
+            date: 'Wed Dec 17'
+        },{
+            id:3,
+            type: "Income",
+            category: "Business",
+            amount: 150,
+            date: 'Wed Dec 22'
+        },
     ]
 
     return (
@@ -27,7 +39,12 @@ const List =()=> {
                                 <MoneyOff />
                             </Avatar>
                         </ListItemAvatar>
-                        <ListItemText primary={transaction.category} secondary={`$${transaction.amount} - ${transaction.date}`}></ListItemText>
+                        <ListItemText primary={transaction.category} secondary={`$${transaction.amount} - ${transaction.date}`}/>
+                        <ListItemSecondaryAction>
+                            <IconButton edge="end" aria-label="delete" onClick="">
+                                <Delete />
+                            </IconButton>
+                        </ListItemSecondaryAction>
                     </ListItem>
               </Slide>
             ))}
